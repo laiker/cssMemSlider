@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .slider {
+    width: 1200px;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: lightgrey;
+}
+
+.container .slider .slider-item {
+    min-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    background: lightgrey;
+    display: flex;
+    transition: all 1s;
+    opacity: 0;
+}
+
+
+#page1:checked ~ .paginator .page-item.n1 span {
+    background: red;
+    cursor: default;
+}
+
+#page1:checked ~ .slider .page1 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#page2:checked ~ .slider .page2 {
+    transform: translateX(-1200px);
+    opacity: 1;
+}
+
+#page3:checked ~ .slider .page3 {
+    transform: translateX(-2400px);
+    opacity: 1;
+}
+
+#page4:checked ~ .slider .page4 {
+    transform: translateX(-3600px);
+    opacity: 1;
+}
+
+#page2:checked ~ .paginator .page-item.n2 span {
+    background: red;
+    cursor: default;
+}
+
+#page3:checked ~ .paginator .page-item.n3 span {
+    background: red;
+    cursor: default;
+}
+
+#page4:checked ~ .paginator .page-item.n4 span {
+    background: red;
+    cursor: default;
+}
+
+.paginator .page-item {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.paginator .page-item span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: lightgrey;
+    border-radius: 50%;
+    font-size: 0;
+    cursor: pointer;
+}
+
