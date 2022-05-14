@@ -1,85 +1,169 @@
+body {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    max-width: 1200px;
+    overflow-x: hidden;
+    background: lightgrey;
 }
 
 .container .slider {
-    width: 1200px;
     overflow-x: hidden;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: lightgrey;
+    width: 100%;
+    padding-top: 30px;
 }
 
-.container .slider .slider-item {
-    min-width: 1200px;
+.slider .slider-item {
+    min-width: -webkit-fill-available;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column-reverse;
-    background: lightgrey;
+    flex-direction: column;
     display: flex;
-    transition: all 1s;
+    transition: opacity 1.5s;
     opacity: 0;
 }
 
-
-#page1:checked ~ .paginator .page-item.n1 span {
-    background: red;
-    cursor: default;
+.slider .slider-item img{
+    display: block;
+    border-radius: 30px;
+    width: 90%;
+    margin: 0 auto;
 }
 
-#page1:checked ~ .slider .page1 {
-    transform: translateX(0);
+.page-type {
+    display: none;
+}
+
+.slider .page1, .slider-desc .page1 {
+    transform: translateX(calc(-100% * 0));
+}
+
+.slider .page2, .slider-desc .page2 {
+    transform: translateX(calc(-100% * 1));
+}
+
+.slider .page3, .slider-desc .page3 {
+    transform: translateX(calc(-100% * 2));
+}
+
+.slider .page4, .slider-desc .page4 {
+    transform: translateX(calc(-100% * 3));
+}
+
+.wrapper-bottom .page-item:hover span {
+    background-color: blue;
+    border: 2px solid blue;
+}
+
+#page1:checked ~ .slider .page1,  #page1:checked ~ .wrapper-bottom .page1 {
     opacity: 1;
 }
 
-#page2:checked ~ .slider .page2 {
-    transform: translateX(-1200px);
+#page2:checked ~ .slider .page2, #page2:checked ~ .wrapper-bottom .page2 {
     opacity: 1;
 }
 
-#page3:checked ~ .slider .page3 {
-    transform: translateX(-2400px);
+#page3:checked ~ .slider .page3, #page3:checked ~ .wrapper-bottom .page3 {
     opacity: 1;
 }
 
-#page4:checked ~ .slider .page4 {
-    transform: translateX(-3600px);
+#page4:checked ~ .slider .page4, #page4:checked ~ .wrapper-bottom .page4 {
     opacity: 1;
 }
 
-#page2:checked ~ .paginator .page-item.n2 span {
-    background: red;
-    cursor: default;
+#page1:checked ~ .wrapper-bottom .page-item.n1 span {
+    background: green;
 }
 
-#page3:checked ~ .paginator .page-item.n3 span {
-    background: red;
-    cursor: default;
+#page2:checked ~ .wrapper-bottom .page-item.n2 span {
+    background: green;
 }
 
-#page4:checked ~ .paginator .page-item.n4 span {
-    background: red;
-    cursor: default;
+#page3:checked ~ .wrapper-bottom .page-item.n3 span {
+    background: green;
+}
+
+#page4:checked ~ .wrapper-bottom .page-item.n4 span {
+    background: green;
 }
 
 .paginator .page-item {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    
 }
 
 .paginator .page-item span{
     display: block;
     width: 20px;
     height: 20px;
-    background-color: lightgrey;
+    background: white;
     border-radius: 50%;
     font-size: 0;
-    cursor: pointer;
+    border: 2px solid green;
 }
 
+.slider-desc {
+    display: flex;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.slider-desc .slider-item__desc {
+    min-width: 80vw;
+    opacity: 0;
+    transition: all 1.5s;
+    font-size: 40px;
+}
+
+.wrapper-bottom {
+    padding: 40px 0;
+    display: flex;
+    width: 100%;
+    max-width: 90%;
+    align-items: center;
+}
+
+.image-wrapper {
+    align-items: center;
+    display: flex;
+}
+
+.paginator {
+    display: flex;
+}
+
+@media(max-width: 1024px) {
+    .container {
+        max-width: 700px;
+    }
+
+    .image-wrapper {
+        max-width: 90%;
+    }
+
+    .wrapper-bottom {
+        flex-direction: column-reverse;
+    }
+
+    .slider-desc .slider-item__desc {
+        font-size: 30px;
+    }
+}
