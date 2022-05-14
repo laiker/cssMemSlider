@@ -127,10 +127,10 @@ body {
 }
 
 .slider-desc .slider-item__desc {
-    min-width: 80vw;
+    min-width: 66vw;
     opacity: 0;
     transition: all 1.5s;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .wrapper-bottom {
@@ -164,6 +164,8 @@ body {
     }
 
     .slider-desc .slider-item__desc {
-        font-size: 30px;
+        font-size: 20px;
+        width: 100%;
+        margin-top: 30px;
     }
 }
