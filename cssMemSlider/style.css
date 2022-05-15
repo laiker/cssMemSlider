@@ -63,10 +63,14 @@ body {
     transform: translateX(calc(-100% * 3));
 }
 
-.wrapper-bottom .page-item:hover span {
+
+
+.wrapper-bottom .page-item:hover span{
     background-color: blue;
     border: 2px solid blue;
 }
+
+
 
 #page1:checked ~ .slider .page1,  #page1:checked ~ .wrapper-bottom .page1 {
     opacity: 1;
@@ -98,6 +102,11 @@ body {
 
 #page4:checked ~ .wrapper-bottom .page-item.n4 span {
     background: green;
+}
+
+.wrapper-bottom .page-item:active span, .wrapper-bottom .page-item:focus span  {
+    background-color: yellow;
+    border: 2px solid yellow;
 }
 
 .paginator .page-item {
